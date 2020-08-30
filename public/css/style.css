@@ -1,0 +1,2464 @@
+@charset "UTF-8";
+
+/*================================= common =================================*/
+
+html {
+  height: 100%;
+  font-size: 62.5%;
+  background: #fff;
+}
+
+body {
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: none;
+  -ms-text-size-adjust: 100%;
+  letter-spacing: -0.01px;
+  -moz-text-size-adjust: 100%;
+       text-size-adjust: 100%;
+  width: 100%;
+  height: 100%;
+  min-width: 1194px;
+}
+
+a {
+  color: #0973ac;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #0973ac;
+  text-decoration: none;
+}
+
+a:active,
+a:focus {
+  outline: 0;
+}
+
+a img:hover {
+  filter: alpha(opacity=85);
+  -moz-opacity: 0.85;
+  opacity: 0.85;
+}
+
+/*-- Position --*/
+
+.TL {
+  text-align: left !important;
+}
+
+.TC {
+  text-align: center !important;
+}
+
+.TR {
+  text-align: right !important;
+}
+
+.cf:after {
+  display: block;
+  clear: both;
+  content: "";
+  height: 0;
+}
+
+.cf {
+  zoom: 1;
+}
+
+.B {
+  font-weight: bold;
+}
+
+.red {
+  color: #ff0202;
+}
+
+.noscriptError {
+  width: 100%;
+  padding-top: 50px;
+  *padding: 20px 0 50px;
+  margin: -4px 0 -40px;
+}
+
+.noscriptError > p {
+  color: #f33;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  font-weight: bold;
+  text-align: center;
+}
+
+/******************************* global.css ************************************
+外枠：1024px
+サイドコンテンツの幅 280px
+コンテンツの幅 710px
+******************************* / global.css **********************************/
+
+/*================================= Wrapper =================================*/
+
+.l_wrapper:after {
+  display: block;
+  clear: both;
+  content: "";
+  height: 0;
+}
+
+.l_wrapper {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+}
+
+/* ログイン画面の時のみ使用 */
+
+.l_wrapper-login {
+  background: none;
+}
+
+/*============================== globalHeader ==============================*/
+
+.l_header {
+  z-index: 4;
+  width: 100%;
+  height: 46px;
+  position: fixed;
+}
+
+/* ログイン後以降に使用 */
+
+.header {
+  zoom: 1;
+  min-width: 1024px;
+  background: linear-gradient(-90deg, #2293ea, #0d558c);
+}
+
+/* ログイン画面の時のみ使用 */
+
+.header-login {
+  margin-bottom: 150px;
+  border-bottom: 5px solid #F01826;
+}
+
+/* headerロゴ */
+
+.header_logo {
+  float: left;
+  padding: 15px 0 7px 17px;
+}
+
+.header_logoOff {
+  z-index: 1;
+  position: absolute;
+}
+
+/* headerメニュー */
+
+.header_menu {
+  color: #fff;
+  float: left;
+  cursor: pointer;
+  font-weight: 900;
+  font-size: 2.2rem;
+  padding: 10px 0 9px 12px;
+  font-family: "Font Awesome 5 Free";
+  transition: all 0.4s;
+}
+
+.header_menu:before {
+  content: "\F101";
+}
+
+.header_menu.close:before {
+  content: "\F100";
+}
+
+.header_menu:hover {
+  color: #f13757;
+  transition: all 0.4s;
+}
+
+.header_text,
+.header_logout {
+  float: left;
+  text-align: center;
+}
+
+.header_text {
+  color: #fff;
+  padding: 15px;
+  white-space: nowrap;
+}
+
+.header_logout {
+  width: 140px;
+  max-height: 100px;
+}
+
+.header_logout button {
+  color: #fff;
+  display: block;
+  position: relative;
+  text-decoration: none;
+  padding: 14px 15px 10px;
+  transition: all 0.3s;
+}
+
+.header_logout button:before {
+  content: "\F2F5";
+  font-weight: 900;
+  font-size: 1.8rem;
+  padding-right: 5px;
+  vertical-align: middle;
+  font-family: "Font Awesome 5 Free";
+}
+
+.header_logout button:hover {
+  color: #0b4775;
+  transition: all 0.3s;
+}
+
+/* タブレット用のメニュー非表示 */
+
+.header_slideMenu {
+  display: none;
+}
+
+/* エントリーフォームで使用 */
+
+.entryForm .header_menu {
+  display: none;
+}
+
+/*=================================== side ===================================*/
+
+.side {
+  top: 47px;
+  z-index: 100;
+  width: 160px;
+  position: fixed;
+  background: #fafafa;
+  height: calc(100% - 35px);
+  border-right: solid 1px #eaeaea;
+}
+
+.sideBox {
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* メニューの指定 */
+
+.sideBox_list {
+  font-size: 1.3rem;
+}
+
+.sideBox_list a {
+  display: block;
+  color: #333;
+  text-decoration: none;
+  padding: 13px 15px 13px 45px;
+}
+
+.sideBox_list span {
+  display: block;
+  white-space: nowrap;
+}
+
+.sideBox_list_icon {
+  left: 13px;
+  position: absolute;
+}
+
+.fa-lg.sideBox_list_icon {
+  line-height: 1.5rem;
+}
+
+/* カーソル合わせた時の色 */
+
+.sideBox_list a:hover {
+  color: #f13757;
+  background: #f2f2f2;
+  transition: all 0.3s;
+}
+
+/* メニュー選択時の色 */
+
+.sideBox-navApplicant .sideBox_listAnchor1,
+.sideBox-navMaster .sideBox_listAnchor2,
+.sideBox .sideBox_listAnchor-active {
+  color: #f13757;
+}
+
+/* メニューの開閉指定 */
+
+.side.close,
+.side.close .sideBox,
+.side.close .sideBox_list,
+.side.close .sideBox_list a {
+  width: 50px;
+}
+
+.side.close .sideBox_list a {
+  height: 16px;
+  padding: 13px 0 13px;
+}
+
+.side.close .sideBox_list span {
+  display: none;
+}
+
+.side.close .sideBox_list a:hover {
+  width: 250px;
+}
+
+.side.close .sideBox_list a:hover span {
+  padding-left: 55px;
+  background: #f2f2f2;
+  display: inline-block;
+}
+
+.side.close .sideBox_menu:after {
+  display: block;
+  clear: both;
+  height: 0;
+  content: "";
+}
+
+/*============================== Contents Layer ============================*/
+
+.l_frame {
+  height: 100%;
+}
+
+.b_contents {
+  padding-top: 47px;
+  margin-left: 160px;
+  height: calc(100% - 93px);
+}
+
+/* sideメニューが閉じている時 */
+
+.b_contents.active {
+  margin-left: 50px;
+}
+
+/* ログイン画面の時のみ使用 */
+
+.b_contents-login {
+  float: none;
+  padding-top: 150px;
+}
+
+/* エントリーフォームで使用 */
+
+.entryForm .b_contents {
+  margin-left: 0;
+  padding-top: 0;
+}
+
+/*=========================== HPContents Common ===========================*/
+
+/*-------------------------------- inner ----------------------------------*/
+
+.inner {
+  padding: 10px 14px 50px 14px;
+}
+
+/*---------------------------------- title ----------------------------------*/
+
+.title {
+  width: 100%;
+}
+
+/* titleの間隔調整 */
+
+.title-spaceS {
+  margin-top: 10px;
+}
+
+.title-spaceM {
+  margin-top: 20px;
+}
+
+.title-spaceL {
+  margin-top: 30px;
+}
+
+/* titleの下にLineを付ける */
+
+.title_bottomMark {
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+/* レッド */
+
+.title_bottomMark-color1 {
+  border-bottom: 1px dashed #ffccd0;
+}
+
+/* ブルー */
+
+.title_bottomMark-color2 {
+  border-bottom: 1px dashed #58b0ec;
+}
+
+/* グリーン */
+
+.title_bottomMark-color3 {
+  border-bottom: 1px dashed #def0d8;
+}
+
+/* グレー */
+
+.title_bottomMark-color4 {
+  border-bottom: 1px dashed #e6e6e6;
+}
+
+/* titleの左横にLineを付ける */
+
+.title_leftMark {
+  padding: 3px 0 5px 15px;
+  border-left: 6px solid #3e73af;
+}
+
+.title_leftMark-color1 {
+  border-left: 6px solid #3fa543;
+}
+
+/* title_text */
+
+.title_text {
+  margin-top: 3px;
+  font-size: 1.6rem;
+}
+
+/* titleの幅調整 */
+
+.title_text-sizeM {
+  font-size: 2.4rem;
+}
+
+/* レッド */
+
+.title_text-color1 {
+  color: #f13757;
+}
+
+/* ブルー */
+
+.title_text-color2 {
+  color: #3577b4;
+}
+
+/* グレー */
+
+.title_text-color3 {
+  color: #333;
+}
+
+.title_text-inline {
+  display: inline-block;
+}
+
+/* 面接日のカレンダーにて使用 */
+
+.title_text_month {
+  position: relative;
+  top: -5px;
+}
+
+.title_text_arrow {
+  color: #333;
+}
+
+.title_text_arrow:hover {
+  color: #0973ac;
+}
+
+/*---------------------------------- table ----------------------------------*/
+
+.table {
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid #ccc;
+}
+
+/* tableの間隔調整 */
+
+.table-spaceXS {
+  margin-top: 3px;
+}
+
+.table-spaceS {
+  margin-top: 10px;
+}
+
+.table-spaceM {
+  margin-top: 20px;
+}
+
+.table-spaceL {
+  margin-top: 30px;
+}
+
+.table-border,
+.table-border .table_title,
+.table-border .table_data {
+  border-top: 1px solid #d9d9d9;
+  border-left: 1px solid #d9d9d9;
+  border-right: 1px solid #d9d9d9;
+}
+
+/* tableの背景色 */
+
+/* 赤 */
+
+.table-bgColor1 {
+  background-color: #ffccd0;
+}
+
+/* 青 */
+
+.table-bgColor2 {
+  background-color: #d5ebf6;
+}
+
+/* クリーム */
+
+.table-bgColor3 {
+  background-color: #fff8e6;
+}
+
+/* グレー */
+
+.table-bgColor4 {
+  background-color: #e6e6e6;
+}
+
+.table_title,
+.table_data {
+  font-size: 1.3rem;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+.table_title {
+  padding: 5px 4px;
+  background: #fafafa;
+}
+
+.table_title-bgColor1 {
+  color: #fff;
+  background: #3f3f3f;
+}
+
+/* センター寄せ */
+
+.table_title-positionCenter,
+.table_data-positionCenter {
+  text-align: center;
+}
+
+/* 右寄せ */
+
+.table_title-positionRight,
+.table_data-positionRight {
+  text-align: right;
+}
+
+.table_data {
+  padding: 8px 4px;
+  word-break: break-all;
+}
+
+.table_data-textSizeM {
+  font-size: 1.6rem;
+}
+
+/* 履歴書ページにて使用<span>タグで対応 */
+
+.table_data-borderBottom {
+  display: block;
+  border-bottom: 1px solid #ccc;
+}
+
+/* 一覧に表示するプロフィール画像 */
+
+.table_data_profile {
+  width: 30px;
+  height: 30px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 15px;
+}
+
+/* 検索用 */
+
+.table-search {
+  background: #fff;
+}
+
+.table-search,
+.table-search .table_data {
+  border-bottom: none;
+}
+
+.table-search .table_title,
+.table-search .table_data {
+  padding: 0;
+}
+
+.table-search .table_data {
+  position: relative;
+}
+
+.table-search .table_data_label {
+  top: -7px;
+  left: 10px;
+  z-index: 2;
+  padding: 0 5px;
+  background: #fff;
+  position: absolute;
+  display: inline-block;
+}
+
+.table-search input {
+  padding: 12px 2px 10px 10px;
+}
+
+.table-search select {
+  padding: 11px 2px 9px 10px;
+}
+
+.table-search input,
+.table-search select {
+  background-color: #fff;
+  border: 1px solid #d9d9d9;
+}
+
+/* 左の余白調整 */
+
+.table-search .table_data-leftSpaceM {
+  padding-left: 10px;
+}
+
+.table-search .table_data-leftSpaceM .table_data_label {
+  left: 25px;
+}
+
+/* 詳細ページで使用 */
+
+.table-design1 .table_title {
+  color: #333;
+  background: #fff;
+  letter-spacing: 0;
+  font-weight: bold;
+  border-color: #3a75b1;
+}
+
+.table-design1 .table_title,
+.table-design1 .table_data {
+  padding: 12px 8px;
+}
+
+/* 入力formで使用 */
+
+.table-form {
+  background: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.08), 0 1px 0 rgba(0, 0, 0, 0.08);
+}
+
+.table-form .table_title {
+  color: #333;
+  background: #fff;
+  letter-spacing: 0;
+}
+
+.table-form .table_title,
+.table-form .table_data {
+  border: none;
+  padding: 10px 8px;
+}
+
+.table-form .table_data input {
+  border: none;
+  padding: 8px 5px;
+  border-bottom: 1px solid #ccc;
+  transition: all 0.4s;
+}
+
+.table-form .table_data input:focus {
+  border-color: #f13757;
+  transition: all 0.4s;
+}
+
+.table-form .table_data select {
+  border: none;
+  padding: 8px 5px;
+  border-bottom: 1px solid #ccc;
+  transition: all 0.4s;
+}
+
+.table-form .table_data select:focus {
+  border-color: #f13757;
+  transition: all 0.4s;
+}
+
+/* 入力非活性の箇所 */
+
+.table-form .table_data-disabled input:disabled {
+  background: #fff;
+}
+
+.table-form.table-conf .table_title,
+.table-form.table-conf .table_data {
+  border-bottom: 1px solid #ccc;
+}
+
+/*---------------------------------- block ----------------------------------*/
+
+.block {
+  width: 100%;
+}
+
+/* blockの間隔調整 */
+
+.block-spaceXS {
+  margin-top: 3px;
+}
+
+.block-spaceS {
+  margin-top: 10px;
+}
+
+.block-spaceM {
+  margin-top: 20px;
+}
+
+.block-spaceL {
+  margin-top: 30px;
+}
+
+.block_inner {
+  padding: 2px 8px;
+}
+
+/* センター寄せ*/
+
+.block-positionCenter {
+  text-align: center;
+}
+
+.block-marginCenter {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 右寄せ*/
+
+.block-positionRight {
+  text-align: right;
+}
+
+/* blockの左、右置き指定 */
+
+.block_left {
+  float: left;
+}
+
+/* block_leftの間隔調整 */
+
+.block_left-spaceS {
+  margin-left: 10px;
+}
+
+.block_left-spaceM {
+  margin-left: 20px;
+}
+
+.block_left-spaceL {
+  margin-left: 30px;
+}
+
+.block_right {
+  float: right;
+}
+
+/* block_leftの間隔調整 */
+
+.block_right-spaceS {
+  margin-right: 10px;
+}
+
+.block_right-spaceM {
+  margin-right: 20px;
+}
+
+.block_right-spaceL {
+  margin-right: 30px;
+}
+
+/*---------------------------------- textBox ----------------------------------*/
+
+.textBox {
+  width: 100%;
+}
+
+.textBox-spaceXS,
+.textBox_text-spaceXS {
+  margin-top: 3px;
+}
+
+.textBox-spaceS,
+.textBox_text-spaceS {
+  margin-top: 10px;
+}
+
+.textBox-spaceM,
+.textBox_text-spaceM {
+  margin-top: 20px;
+}
+
+.textBox-spaceL,
+.textBox_text-spaceL {
+  margin-top: 30px;
+}
+
+.textBox_text {
+  font-size: 1.4rem;
+  text-align: justify;
+}
+
+.textBox_text-sizeM {
+  font-size: 1.8rem;
+}
+
+/* レッド */
+
+.textBox_text-color1 {
+  color: #f13757;
+}
+
+/* ホワイト */
+
+.textBox_text-color2 {
+  color: #fff;
+}
+
+.textBox_text-bold {
+  font-weight: bold;
+}
+
+.textBox_text-borderBottom {
+  border-bottom: 1px solid #fff;
+}
+
+/* テキスト文字にリストスタイルを適用 */
+
+.textBox_text-listStyle {
+  list-style-type: disclosure-closed;
+  margin-left: 15px;
+}
+
+.textBox_text-positionCenter {
+  text-align: center;
+}
+
+/* block内で使用するinput select etc */
+
+.textBox_text_input {
+  width: 100%;
+  padding: 6px 3px 7px;
+}
+
+.textBox_text_file {
+  cursor: pointer;
+}
+
+/* fileのアイコンを追加 */
+
+.textBox-fileIcon .textBox_text {
+  margin-top: 5px;
+}
+
+.textBox-fileIcon .textBox_text::before {
+  content: "";
+  width: 18px;
+  height: 18px;
+  float: left;
+  margin-right: 7px;
+  display: inline-block;
+  vertical-align: middle;
+  background: url("/img/icon_clip.png") center left no-repeat;
+  background-size: auto;
+  background-size: auto;
+  background-size: 18px 18px;
+}
+
+/*---------------------------------- btn ----------------------------------*/
+
+.breadcrumb {
+  width: 100%;
+  background: #fafafa;
+  border-bottom: solid 1px #eaeaea;
+}
+
+.breadcrumb_inner {
+  padding: 17px 10px 13px 15px;
+}
+
+.breadcrumb_inner_text {
+  font-weight: 600;
+  font-size: 1.8rem;
+}
+
+/*---------------------------------- btn ----------------------------------*/
+
+/* btn(デフォルトカラー：赤) */
+
+.btn {
+  width: 100px;
+  text-align: center;
+  transition: all 0.5s;
+}
+
+/* btnのサイズ */
+
+.btn-sizeXXS {
+  width: 35px;
+}
+
+.btn-sizeXS {
+  width: 50px;
+}
+
+.btn-sizeS {
+  width: 70px;
+}
+
+.btn-sizeM {
+  width: 130px;
+}
+
+.btn-sizeL {
+  width: 170px;
+}
+
+.btn-size2L {
+  width: 190px;
+}
+
+.btn-size3L {
+  width: 210px;
+}
+
+/* ボタンを真ん中に寄せる */
+
+.btn-positionAuto {
+  margin: 0 auto;
+}
+
+/* btnの間隔調整 */
+
+.btn-spaceXS {
+  margin-top: 3px;
+}
+
+.btn-spaceS {
+  margin-top: 10px;
+}
+
+.btn-spaceM {
+  margin-top: 20px;
+}
+
+.btn-leftSpaceS {
+  margin-left: 10px;
+}
+
+.btn-leftSpaceM {
+  margin-left: 20px;
+}
+
+.btn-leftSpaceL {
+  margin-left: 30px;
+}
+
+.btn-leftSpace2L {
+  margin-left: 100px;
+}
+
+/* btn横並べにする場合 */
+
+.btn-inline {
+  display: inline-block;
+}
+
+.btn_link {
+  color: #fff;
+  padding: 7px 8px 9px;
+  display: block;
+  background: #f13757;
+  text-decoration: none;
+  border: 1px solid #f13757;
+  border-radius: 3px;
+  transition: all 0.5s;
+}
+
+.btn_link-sizeS {
+  padding: 5px;
+}
+
+/* btn(input ver)の調整 */
+
+.btn-button .btn_link {
+  width: 100%;
+  padding: 6px 8px;
+}
+
+/* ブルー */
+
+.btn-color1 .btn_link {
+  background: #2293ea;
+  border: 1px solid #2293ea;
+}
+
+/* オレンジ */
+
+.btn-color2 .btn_link {
+  background: #ff9a2d;
+  border: 1px solid #ff9a2d;
+}
+
+/* グリーン */
+
+.btn-color3 .btn_link {
+  background: #5cb85c;
+  border: 1px solid #5cb85c;
+}
+
+/* グレー */
+
+.btn-color4 .btn_link {
+  background: #a5a4a4;
+  border: 1px solid #a5a4a4;
+}
+
+/* ダークグレー */
+
+.btn-color5 .btn_link {
+  background: #676565;
+  border: 1px solid #676565;
+}
+
+/* 薄いグレー */
+
+.btn-color6 .btn_link {
+  background: #cbcbcb;
+  border: 1px solid #cbcbcb;
+}
+
+/* btnのホバー */
+
+.btn_link:hover,
+.btn_link:focus {
+  color: #f13757;
+  background: #fff;
+  transition: all 0.4s;
+}
+
+/* ブルー */
+
+.btn-color1 .btn_link:hover,
+.btn-color1 .btn_link:focus {
+  color: #2293ea;
+}
+
+/* オレンジ */
+
+.btn-color2 .btn_link:hover,
+.btn-color2 .btn_link:focus {
+  color: #ff9a2d;
+}
+
+/* グリーン */
+
+.btn-color3 .btn_link:hover,
+.btn-color3 .btn_link:focus {
+  color: #5cb85c;
+}
+
+/* グレー */
+
+.btn-color4 .btn_link:hover,
+.btn-color4 .btn_link:focus {
+  color: #a5a4a4;
+}
+
+/* ダークグレー */
+
+.btn-color5 .btn_link:hover,
+.btn-color5 .btn_link:focus {
+  color: #676565;
+}
+
+/* btnの非活性 */
+
+.btn-disable:hover,
+.btn-disable .btn_link:hover {
+  color: #fff;
+  background: #cbcbcb;
+}
+
+/* iconデフォルト設定 */
+
+.btn_link-icon:before {
+  width: 2.16rem;
+  font-weight: 900;
+  font-size: 1.8rem;
+  font-style: normal;
+  text-align: center;
+  line-height: 0.75rem;
+  font-variant: normal;
+  text-rendering: auto;
+  margin-right: 0.5rem;
+  display: inline-block;
+  vertical-align: -0.3rem;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Free";
+}
+
+/* 登録、編集 */
+
+.btn_link-iconPen:before {
+  content: "\F303";
+}
+
+/* 確認 */
+
+.btn_link-iconCheck:before {
+  content: "\F00C";
+}
+
+/* 削除 */
+
+.btn_link-iconDelete:before {
+  content: "\F2ED";
+}
+
+/* 戻る */
+
+.btn_link-iconBack:before {
+  content: "\F30A";
+}
+
+/* 閉じる */
+
+.btn_link-iconClose:before {
+  content: "\F00D";
+}
+
+/* 検索 */
+
+.btn_link-iconSearch:before {
+  content: "\F002";
+}
+
+/* クリア */
+
+.btn_link-iconClear:before {
+  content: "\F00D";
+}
+
+/* ダウンロード */
+
+.btn_link-iconDownload:before {
+  content: "\F019";
+}
+
+/* アップロード */
+
+.btn_link-iconUpload:before {
+  content: "\F093";
+}
+
+/* 印刷 */
+
+.btn_link-iconPrint:before {
+  content: "\F02F";
+}
+
+/* 送信 */
+
+.btn_link-iconSend:before {
+  content: "\F1D8";
+}
+
+/* pdf */
+
+.btn_link-iconPdf:before {
+  content: "\F1C1";
+}
+
+/* ファイル */
+
+.btn_link-iconFile:before {
+  content: "\F07C";
+}
+
+/* 画像 */
+
+.btn_link-iconImg:before {
+  content: "\F03E";
+}
+
+/* MAP */
+
+.btn_link-iconMap:before {
+  content: "\F3C5";
+}
+
+/* ログイン */
+
+.btn_link-iconLogin:before {
+  content: "\F2F6";
+}
+
+/* 請求書 */
+
+.btn_link-iconInvoice:before {
+  content: "\F15C";
+  vertical-align: -0.3rem;
+}
+
+/* 保存 */
+
+.btn_link-iconSave:before {
+  content: "\F0C7";
+}
+
+/* プラス */
+
+.btn_link-iconPlus:before {
+  content: "\F067";
+}
+
+/* 注意 */
+
+.btn_link-iconNote:before {
+  content: "\F071";
+}
+
+/*---------------------------------- iconBtn ----------------------------------*/
+
+.iconBtn .fas {
+  color: #f13757;
+  transition: all 0.4s;
+}
+
+/* ブルー */
+
+.iconBtn-color1 .fas {
+  color: #2293ea;
+}
+
+/* オレンジ */
+
+.iconBtn-color2 .fas {
+  color: #ff9a2d;
+}
+
+/* グリーン */
+
+.iconBtn-color3 .fas {
+  color: #5cb85c;
+}
+
+/* グレー */
+
+.iconBtn-color4 .fas,
+.iconBtn-color6 .fas {
+  color: #a5a4a4;
+}
+
+/* ダークグレー */
+
+.iconBtn-color5 .fas {
+  color: #676565;
+}
+
+/* btnのホバー */
+
+.iconBtn .fas:hover {
+  color: #d70f30;
+  transition: all 0.4s;
+}
+
+/* ブルー */
+
+.iconBtn-color1 .fas:hover {
+  color: #147fd2;
+}
+
+/* オレンジ */
+
+.iconBtn-color2 .fas:hover,
+.iconBtn-color6 .fas:hover {
+  color: #ffa94d;
+}
+
+/* グリーン */
+
+.iconBtn-color3 .fas:hover {
+  color: #46a046;
+}
+
+/* グレー */
+
+.iconBtn-color4 .fas:hover {
+  color: #676565;
+}
+
+/* ダークグレー */
+
+.iconBtn-color5 .fas:hover {
+  color: #cbcbcb;
+}
+
+/*---------------------------------- menuBox ----------------------------------*/
+
+.menuBox {
+  width: 100%;
+}
+
+.menuBox-spaceS {
+  margin-top: 10px;
+}
+
+.menuBox-spaceM {
+  margin-top: 20px;
+}
+
+.menuBox_item {
+  float: left;
+  width: 130px;
+  text-align: center;
+}
+
+.menuBox_item a {
+  color: #555;
+  display: block;
+  padding: 6px 0;
+  text-decoration: none;
+}
+
+.menuBox_item a:hover {
+  color: #f33957;
+}
+
+.menuBox_item-on a,
+.menuBox_item-on a:hover {
+  color: #fff;
+  background: #f33957;
+  transition: all 0.4s;
+}
+
+.menuBox:after {
+  display: block;
+  clear: both;
+  height: 0;
+  content: "";
+}
+
+/*--------------------------------- pager -----------------------------------*/
+
+.pager {
+  width: 100%;
+  text-align: center;
+}
+
+.pager-spaceS {
+  margin-top: 10px;
+}
+
+.pager-spaceM {
+  margin-top: 20px;
+}
+
+.pager-spaceL {
+  margin-top: 30px;
+}
+
+.pager_list {
+  height: 35px;
+  padding: 0 8px;
+  border-radius: 35px;
+  display: inline-block;
+  background-color: #fafafa;
+  box-shadow: 0 0 1px 1px #ccc, 1px 1px 1px 0 #b3b3b3;
+}
+
+.pager_item {
+  float: left;
+  font-size: 1.3rem;
+}
+
+.pager_item a {
+  display: block;
+  color: #595959;
+  padding: 0 20px;
+  line-height: 35px;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  transition: 400ms ease;
+}
+
+.page_item_num,
+.pager_item_prevNone,
+.pager_item_nextNone {
+  display: block;
+  color: #595959;
+  padding: 0 20px;
+  line-height: 35px;
+  letter-spacing: 0.1em;
+  transition: 400ms ease;
+}
+
+.page_item_num:hover,
+.page_item_num.current {
+  color: #fff;
+  background-color: #2293ea;
+}
+
+.page_item_num.prev:hover,
+.page_item_num.next:hover {
+  color: #2293ea;
+  background-color: transparent;
+}
+
+.pager_item_prevNone,
+.pager_item_nextNone {
+  color: #ccc;
+}
+
+/*+++++++++++++++++++++++++++++++++ login ++++++++++++++++++++++++++++++++++*/
+
+/* loginページで使用 */
+
+.login_body {
+  min-width: 100%;
+}
+
+.login {
+  width: 100%;
+}
+
+/* ロゴ,ログインテキスト */
+
+.login_outSide {
+  text-align: center;
+}
+
+.login_outSide_logo {
+  margin-bottom: 20px;
+}
+
+.login_outSide_text {
+  color: #F04853;
+  font-size: 3.2rem;
+  margin-bottom: 30px;
+}
+
+.login_error {
+  color: #f00;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* ログインbox */
+
+.login_box {
+  text-align: left;
+  background: #fff;
+  border-radius: 2px;
+  border: 1px solid #dedede;
+}
+
+.login_box-small {
+  width: 400px;
+  margin: 0 auto;
+}
+
+.login_box_inner {
+  padding: 32px;
+}
+
+.login_box_innerItem {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.login_box_innerItem dt {
+  margin-bottom: 5px;
+}
+
+.login_box_innerItem input {
+  padding: 8px 5px;
+  border: 1px solid #e5e5e5;
+}
+
+/* ログインbtn */
+
+.login_box_innerBtn {
+  font-weight: bold;
+  text-align: center;
+}
+
+.login_box_innerBtn input {
+  width: 100%;
+  color: #fff;
+  cursor: pointer;
+  border: 0 solid;
+  padding: 15px 0;
+  font-weight: bold;
+  background: #3577b4;
+  border-radius: 4px;
+}
+
+/* ログインbtnの色変更&ホバー色 */
+
+.login_box_innerBtn input:hover {
+  background: #2e689e;
+  transition: all 0.6s;
+}
+
+/*+++++++++++++++++++++++++++++++++ error ++++++++++++++++++++++++++++++++++*/
+
+.error {
+  color: #f00;
+}
+
+/*---------------------------- 403 / 404 / 500 error -------------------------*/
+
+.codeBox {
+  left: 0;
+  right: 0;
+  top: 40%;
+  position: absolute;
+  transform: translateY(-50%);
+}
+
+.codeBox_title {
+  font-size: 7.2rem;
+  text-align: center;
+}
+
+.codeBox_text {
+  font-size: 3.2rem;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/*+++++++++++++++++++++++++++++++++ modal ++++++++++++++++++++++++++++++++++*/
+
+/* モーダルウィンドウ */
+
+.overlay {
+  display: none;
+}
+
+.overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: scroll;
+  z-index: 100;
+}
+
+.overlay-1,
+.overlay-2 {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal_box {
+  position: absolute;
+  top: 80px;
+  left: 30%;
+}
+
+.modal_box-position1 {
+  position: absolute;
+  top: 200px;
+  left: 39%;
+}
+
+.modal_box {
+  display: none;
+}
+
+.popBox {
+  display: none;
+}
+
+/*---------------------------- Loading -------------------------*/
+
+.loadBox {
+  position: absolute;
+  top: 242px;
+  left: 44%;
+  z-index: 2002;
+}
+
+.loadBox_img {
+  width: 200px;
+  z-index: 2002;
+  text-align: center;
+}
+
+.loadBox_img img {
+  width: 140px;
+  height: 140px;
+}
+
+.loadBox_myProgress {
+  width: 100%;
+  position: relative;
+  background-color: #eee;
+  box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.loadBox_myProgress_bar {
+  width: 1%;
+  height: 30px;
+  background-color: #f73d57;
+}
+
+.loadBox_count {
+  top: 20%;
+  left: 40%;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  position: absolute;
+  text-align: center;
+}
+
+.loadBox_count span {
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.loadBox .textBox_text {
+  color: #fff;
+  font-size: 24px;
+  text-align: center;
+}
+
+.loadPage {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  display: block;
+  z-index: 1000;
+  position: fixed;
+  overflow: hidden;
+  background-color: #000;
+}
+
+/*---------------------------- disabled -------------------------*/
+
+:disabled {
+  background-color: #ddd;
+}
+
+/*---------------------------------- flexBox ----------------------------------*/
+
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flexBlock {
+  padding: 5px 8px;
+  border-radius: 5px;
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(0, 0, 0, 0.05);
+}
+
+.flexBlock-spaceS {
+  margin-top: 10px;
+}
+
+.flexBlock-spaceM {
+  margin-top: 20px;
+}
+
+.flexBlock-spaceL {
+  margin-top: 30px;
+}
+
+.flexBlock_list {
+  width: 100%;
+}
+
+.flexBlock_list_item {
+  padding: 5px 8px;
+}
+
+/*---------------------------- profile -------------------------*/
+
+.profile {
+  width: 120px;
+}
+
+.profile_img {
+  width: 120px;
+  height: 120px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 60px;
+  border: 1px solid #ccc;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08), 0 1px 0 rgba(0, 0, 0, 0.08);
+}
+
+.profile input[type=file] {
+  display: none;
+}
+
+.profile_group {
+  text-align: center;
+}
+
+.profile_group_input {
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.profile_group label {
+  background: #ddd;
+  padding: 10px 25px;
+  border-radius: 10px;
+  display: inline-block;
+  position: relative;
+  transition: all 0.4s;
+}
+
+.profile_group label:hover {
+  color: #fff;
+  background: #f13757;
+  transition: all 0.4s;
+}
+
+.profile_group label::after {
+  content: "";
+  font-size: 14px;
+  height: 20px;
+  line-height: 20px;
+  position: absolute;
+  right: -140px;
+  top: calc(50% - 10px);
+}
+
+.profile_group label.changed::after {
+  content: "";
+}
+
+.profile_group_filename {
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+
+/*---------------------------- input -------------------------*/
+
+.input {
+  width: 100%;
+  padding: 3px 3px 4px;
+}
+
+/* input type="text"の幅調整 */
+
+.input-size05 {
+  width: 5%;
+}
+
+.input-size1 {
+  width: 10%;
+}
+
+.input-size1half {
+  width: 15%;
+}
+
+.input-size2 {
+  width: 20%;
+}
+
+.input-size2half {
+  width: 25%;
+}
+
+.input-size3 {
+  width: 30%;
+}
+
+.input-size3half {
+  width: 35%;
+}
+
+.input-size4 {
+  width: 40%;
+}
+
+.input-size4half {
+  width: 45%;
+}
+
+.input-size5 {
+  width: 50%;
+}
+
+.input-size5half {
+  width: 55%;
+}
+
+.input-size6 {
+  width: 60%;
+}
+
+.input-size6half {
+  width: 65%;
+}
+
+.input-size7 {
+  width: 70%;
+}
+
+.input-size7half {
+  width: 75%;
+}
+
+.input-size8 {
+  width: 80%;
+}
+
+.input-size8half {
+  width: 85%;
+}
+
+.input-size9 {
+  width: 90%;
+}
+
+.input-size9half {
+  width: 95%;
+}
+
+/* input type="text"のmarginLeft指定 */
+
+.input-marginLeft {
+  margin-left: 10px;
+}
+
+/* inputの値を中央寄せにする */
+
+.input-positionCenter {
+  text-align: center;
+}
+
+/* input type="text"の空間調整 */
+
+.input-spaceS {
+  margin-top: 10px;
+}
+
+.input-spaceM {
+  margin-top: 20px;
+}
+
+.input-spaceL {
+  margin-top: 30px;
+}
+
+/*---------------------------- select -------------------------*/
+
+.select {
+  width: 100%;
+  padding: 2px 2px 3px;
+}
+
+/* selectの幅調整 */
+
+.select-size05 {
+  width: 5%;
+}
+
+.select-size07 {
+  width: 7%;
+}
+
+.select-size08 {
+  width: 8%;
+}
+
+.select-size09 {
+  width: 9%;
+}
+
+.select-size1 {
+  width: 10%;
+}
+
+.select-size1half {
+  width: 15%;
+}
+
+.select-size2 {
+  width: 20%;
+}
+
+.select-size2half {
+  width: 25%;
+}
+
+.select-size3 {
+  width: 30%;
+}
+
+.select-size3half {
+  width: 35%;
+}
+
+.select-size4 {
+  width: 40%;
+}
+
+.select-size4half {
+  width: 45%;
+}
+
+.select-size5 {
+  width: 50%;
+}
+
+.select-size5half {
+  width: 55%;
+}
+
+.select-size6 {
+  width: 60%;
+}
+
+.select-size6half {
+  width: 65%;
+}
+
+.select-size7 {
+  width: 70%;
+}
+
+.select-size8 {
+  width: 80%;
+}
+
+/* selectの間隔調整 */
+
+.select-spaceS {
+  margin-top: 10px;
+}
+
+.select-spaceM {
+  margin-top: 20px;
+}
+
+.select-spaceL {
+  margin-top: 30px;
+}
+
+/*---------------------------- textArea -------------------------*/
+
+.textArea {
+  width: 100%;
+  resize: vertical;
+  min-height: 100px;
+  padding: 3px 3px 4px;
+  vertical-align: middle;
+}
+
+.textArea-small {
+  min-height: 60px;
+}
+
+.textArea-midium {
+  min-height: 80px;
+}
+
+.textArea-large {
+  min-height: 120px;
+}
+
+.textArea:disabled {
+  width: 100%;
+  background-color: #fff;
+}
+
+/* リサイズ機能の停止 */
+
+.textArea-resize {
+  resize: none;
+}
+
+/*---------------------------- radio -------------------------*/
+
+/* 四角タイプのラジオボタン */
+
+.radioBox {
+  width: 100%;
+}
+
+.radioBox_list {
+  list-style: none;
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+  border: solid 1px #ddd;
+}
+
+.radioBox_list_label {
+  display: block;
+  min-width: 4em;
+  text-align: center;
+  padding: 4px 6px 6px;
+  border: solid 1px rgba(255, 255, 255, 0.2);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  background: #eee;
+  background: -moz-linear-gradient(top, #fff, #eee);
+  background: -webkit-gradient(linear, left top, left bottom, from(#FFF), to(#EEE));
+  transition: all 0.4s;
+}
+
+.radioBox_list_label-small {
+  min-width: 2em;
+}
+
+.radioBox_list input[type=radio] {
+  margin: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  position: absolute;
+}
+
+.radioBox_list input[type=radio]:checked {
+  cursor: auto;
+}
+
+.radioBox_list input[type=radio]:checked + label {
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  border: solid 1px rgba(0, 0, 0, 0.1);
+}
+
+.radioBox_list input[type=radio]:checked + label {
+  background: #0070c0;
+  background: -moz-linear-gradient(top, #0070c0, #0086cd);
+  background: -webkit-gradient(linear, left top, left bottom, from(#0086cd), to(#0070c0));
+  transition: all 0.4s;
+}
+
+.radioBox_list input[type=radio]:focus {
+  background: #f53b57;
+  background: -moz-linear-gradient(top, #f53b57, #cc001f);
+  background: -webkit-gradient(linear, left top, left bottom, from(#cc001f), to(#f53b57));
+}
+
+.radioBox_list input[type=radio]:focus + label {
+  background: #f53b57;
+  background: -moz-linear-gradient(top, #f53b57, #cc001f);
+  background: -webkit-gradient(linear, left top, left bottom, from(#cc001f), to(#f53b57));
+}
+
+@media screen and (max-width: 1599px) {
+  .radioBox_list_label {
+    min-width: 3em;
+  }
+}
+
+/* サークルタイプのラジオボタン */
+
+.radioCircle {
+  cursor: pointer;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+  display: inline-block;
+  -webkit-user-select: none;
+}
+
+.radioCircle:not(:first-child) {
+  margin-left: 10px;
+}
+
+.radioCircle .radioCircle_input,
+.table-form .radioCircle .radioCircle_input {
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: none;
+}
+
+@media screen and (max-width: 480px) {
+  .radioCircle {
+    display: block;
+  }
+
+  .radioCircle:not(:first-child) {
+    margin-left: 0;
+    margin-top: 15px;
+  }
+}
+
+.radioCircle_input:checked + .radioCircle_svg path {
+  transition: all 0.4s ease;
+}
+
+.radioCircle_input:checked + .radioCircle_svg path.radioCircle_svg_inner {
+  stroke-dashoffset: 38;
+  transition-delay: 0.3s;
+}
+
+.radioCircle_input:checked + .radioCircle_svg path.radioCircle_svg_outer {
+  stroke-dashoffset: 0;
+}
+
+.radioCircle_svg {
+  fill: none;
+  vertical-align: middle;
+}
+
+.radioCircle_svg_circle {
+  stroke-width: 2;
+  stroke: #C8CCD4;
+}
+
+.radioCircle_svg path {
+  stroke: #008FFF;
+}
+
+.radioCircle_svg path.radioCircle_svg_inner {
+  stroke-width: 6;
+  stroke-dasharray: 19;
+  stroke-dashoffset: 19;
+}
+
+.radioCircle_svg path.radioCircle_svg_outer {
+  stroke-width: 2;
+  stroke-dasharray: 57;
+  stroke-dashoffset: 57;
+}
+
+.radioCircle span {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.radioCircle_input:focus ~ span {
+  color: #f13757;
+}
+
+/*---------------------------- checkBox -------------------------*/
+
+/* 四角タイプのチェックボックス */
+
+.checkbox,
+.table-form .table_data .checkbox {
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border-bottom: none;
+}
+
+.checkbox_label {
+  margin: auto;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+  cursor: pointer;
+}
+
+.checkbox_label span {
+  display: inline-block;
+  vertical-align: middle;
+  transform: translate3d(0, 0, 0);
+}
+
+.checkbox_label span:first-child {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  border-radius: 3px;
+  transform: scale(1);
+  vertical-align: middle;
+  border: 2px solid #C8CCD4;
+  transition: all 0.2s ease;
+}
+
+.checkbox_label span:first-child svg {
+  position: absolute;
+  top: 4px;
+  left: 3px;
+  fill: none;
+  stroke: #fff;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 16px;
+  stroke-dashoffset: 16px;
+  transition: all 0.3s ease;
+  transition-delay: 0.1s;
+  transform: translate3d(0, 0, 0);
+}
+
+.checkbox_label span:first-child:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #506EEC;
+  display: block;
+  transform: scale(0);
+  opacity: 1;
+  border-radius: 50%;
+}
+
+.checkbox_label:hover span:first-child {
+  border-color: #C8CCD4;
+}
+
+.checkbox:checked + .checkbox_label span:first-child {
+  background: #3e73af;
+  border-color: #3e73af;
+  -webkit-animation: wave 0.4s ease;
+          animation: wave 0.4s ease;
+}
+
+.checkbox:checked + .checkbox_label span:first-child svg {
+  stroke-dashoffset: 0;
+}
+
+.checkbox:checked + .checkbox_label span:first-child:before {
+  transform: scale(3.5);
+  opacity: 0;
+  transition: all 0.6s ease;
+}
+
+@-webkit-keyframes wave {
+  50% {
+    transform: scale(0.9);
+  }
+}
+
+@keyframes wave {
+  50% {
+    transform: scale(0.9);
+  }
+}
+
+/*---------------------------- file -------------------------*/
+
+.fileBox {
+  margin-top: 2px;
+  padding-left: 4px;
+  margin-bottom: 2px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.fileBox_uploadBtn {
+  color: #f53b57;
+  cursor: pointer;
+  font-size: 1.3rem;
+  padding-right: 12px;
+  padding-left: 12px;
+  border: solid 1px #d9d9d9;
+  background-color: #fff;
+  border-radius: 4px;
+  transition: all 0.4s;
+}
+
+.fileBox_uploadBtn:hover {
+  color: #fff;
+  border-color: #f53b57;
+  background: #f53b57;
+  transition: all 0.4s;
+}
+
+.fileBox_uploadBtn input {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+/*---------------------------------- form Icon ----------------------------------*/
+
+.iconBox {
+  position: relative;
+}
+
+.iconBox .input {
+  padding-left: 30px;
+}
+
+.iconBox_item {
+  top: 9px;
+  left: 5px;
+  color: #dbdbdb;
+  position: absolute;
+}
+
+.login_box_innerItem .iconBox input:focus,
+.iconBox input:focus {
+  border-color: #f1a510;
+}
+
+.login_box_innerItem .iconBox input:focus ~ .iconBox_item,
+.iconBox input:focus ~ .iconBox_item {
+  color: #333;
+}
+
+/*---------------------------------- 必須アイコン ----------------------------------*/
+
+.fa-asterisk {
+  float: right;
+  color: #f53b57;
+  margin-top: 3px;
+}
+
+/******************************* レスポンシブ対応 ************************************
+ iPad仕様(iPad Pro11まで対応)
+外枠：1194px
+******************************* / レスポンシブ対応 **********************************/
+
+@media screen and (max-width: 1366px) {
+  /*------ header ------*/
+
+  /* pc用のメニュー非表示 */
+
+  .header_menu {
+    display: none;
+  }
+
+  .header_logo {
+    margin-left: 0;
+  }
+
+  /* タブレット用のメニュー表示 */
+
+  .header_slideMenu {
+    float: left;
+    z-index: 100;
+    min-width: 19px;
+    cursor: pointer;
+    display: inline-block;
+    padding: 12px 0 12px 12px;
+  }
+
+  .header_slideMenu:before {
+    color: #fff;
+    content: "\F0C9";
+    font-weight: 900;
+    font-size: 1.8rem;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Font Awesome 5 Free";
+    transition: all 0.5s;
+  }
+
+  .header_slideMenu.active:before {
+    content: "\F00D";
+    transition: all 0.5s;
+  }
+
+  .contentOverlay {
+    left: 0;
+    width: 0;
+    height: 0;
+    z-index: 3;
+    opacity: 0;
+    content: "";
+    display: block;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: opacity 0.5s;
+  }
+
+  .contentOverlay.active {
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* エントリーフォームで使用 */
+
+  .entryForm .header_slideMenu {
+    display: none;
+  }
+
+  /*------ side ------*/
+
+  .side {
+    left: 0;
+    top: 47px;
+    z-index: 10;
+    position: fixed;
+    transform: translate(-250px);
+    transition: all 0.5s;
+  }
+
+  .side.open {
+    transform: translateZ(0);
+  }
+
+  .inner {
+    padding: 10px 12px 50px 10px;
+  }
+
+  /*------ b_contents ------*/
+
+  .b_contents,
+  .b_contents.active {
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 1194px) {
+  /*------ table ------*/
+
+  .table_title,
+  .table_data {
+    font-size: 1.2rem;
+  }
+
+  .table_data-textSizeM {
+    font-size: 1.3rem;
+  }
+}
+

@@ -1,0 +1,119 @@
+@charset "utf-8";
+// ****************************************************************
+// 空間
+// ****************************************************************
+$space-XS: 3px;
+$space-S:  10px;
+$space-M:  20px;
+$space-L:  30px;
+$space-2L: 40px;
+$space-3L: 50px;
+// ****************************************************************
+// size関係
+// ****************************************************************
+$size05: 5%;
+$size1: 10%;
+$size1-half: 15%;
+$size2: 20%;
+$size2-half: 25%;
+$size3: 30%;
+$size3-half: 35%;
+$size4: 40%;
+$size4-half: 45%;
+$size5: 50%;
+$size5-half: 55%;
+$size6: 60%;
+$size6-half: 65%;
+$size7: 70%;
+$size7-half: 75%;
+$size8: 80%;
+$size8-half: 85%;
+$size9: 90%;
+$size9-half: 95%;
+// ****************************************************************
+// 文字色
+// ****************************************************************
+$color-red  : #f13757;
+$color-blue : #3577b4;
+$color-gray : #333;
+// ****************************************************************
+// 背景色
+// ****************************************************************
+$l-color-red1    : #ffccd0;
+$l-color-red2    : #f33957;
+$l-color-blue1   : #d5ebf6;
+$l-color-blue2   : #58b0ec;
+$l-color-blue3   : #3577b4;
+$l-color-orange1 : #ffe5cc;
+$l-color-orange2 : #fe9939;
+$l-color-green1  : #def0d8;
+$l-color-green2  : #5fb862;
+$l-color-cream1  : #fff8e6;
+$l-color-cream2  : #e6a800;
+$l-color-purple1 : #ffccfe;
+$l-color-purple2 : #6765d0;
+$l-color-gray1   : #e6e6e6;
+$l-color-gray2   : #d6dce3;
+$l-color-gray3   : #565656;
+// ****************************************************************
+// ボタン色
+// ****************************************************************
+$b-color-red            : #d9534f;
+$b-color-redBottom      : #c13531;
+$b-color-blue           : #2293ea;
+$b-color-blueBottom     : #0d4473;
+$b-color-orange         : #ff9a2d;
+$b-color-orangeBottom   : #dd790d;
+$b-color-yellow         : #cccc00;
+$b-color-yellowBottom   : #999900;
+$b-color-green          : #5cb85c;
+$b-color-greenBottom    : #31a131;
+$b-color-gray           : #a5a4a4;
+$b-color-grayBottom     : #949393;
+$b-color-darkGray       : #676565;
+$b-color-darkGrayBottom : #4d4d4d;
+// ****************************************************************
+// ボタン色ホバー用
+// ****************************************************************
+$b-hoverColor-red            : #d2322d;
+$b-hoverColor-redBottom      : #ab091e;
+$b-hoverColor-blue           : #1f68b1;
+$b-hoverColor-blueBottom     : #0f528c;
+$b-hoverColor-orange         : #f38208;
+$b-hoverColor-orangeBottom   : #b76309;
+$b-hoverColor-yellow         : #b3b300;
+$b-hoverColor-yellowBottom   : #808000;
+$b-hoverColor-green          : #46a127;
+$b-hoverColor-greenBottom    : #1c891c;
+$b-hoverColor-gray           : #888;
+$b-hoverColor-grayBottom     : #666;
+$b-hoverColor-darkGray       : #a5a4a4;
+$b-hoverColor-darkGrayBottom : #949393;
+// ****************************************************************
+// アニメーションスピード
+// ****************************************************************
+@mixin trans($trans: 0.5) {
+	-webkit-transition: all $trans + s;
+	-moz-transition:  all $trans + s;
+	-ms-transition: all $trans + s;
+	-o-transition: all $trans + s;
+	transition: all $trans + s;
+}
+// @include trans(0.4);
+
+@mixin scale($scale: 1.5) {
+	-webkit-transform: all $scale + s;
+	-moz-transform:  all $scale + s;
+	-ms-transform: all $scale + s;
+	-o-transform: all $scale + s;
+	transform: all $scale + s;
+}
+// @include scale(1.2);
+
+@mixin border-radius($radius: 4px) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+	border-radius: $radius;
+}
+// @include border-radius(0 3px 3px 0);

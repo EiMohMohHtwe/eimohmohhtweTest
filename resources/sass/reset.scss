@@ -1,0 +1,100 @@
+@charset "utf-8";
+/*
+YUI 3.6.0pr1 (build 5195)
+Copyright 2012 Yahoo! Inc. All rights reserved.
+Licensed under the BSD License.
+http://yuilibrary.com/license/
+*/
+html{ color:#333; background: #ffffff; }
+article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary { display: block; }
+body, div, dl, dt, dd, ol, ul, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, section, nav, article, aside, hgroup, header, footer, figure, figcaption, details, summary, menu { margin: 0; padding: 0; }
+table { width: 100%; border-collapse: collapse; border-spacing: 0; }
+fieldset, img { border: 0; }
+address, caption, cite, code, dfn, em, strong, th, var { font-style: normal; font-weight: normal; }
+em {font-weight: bold; font-style:normal;}
+caption, th { text-align: left; }
+h1, h2, h3, h4, h5, h6 { font-size: 100%; }
+q:before, q:after { content:''; }
+abbr, acronym { border: 0; font-variant: normal; }
+sup { vertical-align: text-top; }
+sub { vertical-align: text-bottom; }
+input, textarea, select { font-family: inherit; font-size: inherit; font-weight: inherit; }
+input, textarea, select { *font-size: 100%; }
+legend { color: #333; }
+#yui3-css-stamp.cssreset { display: none; }
+body{ font: 13px/1.231 "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "HiraKakuPro-W3", "メイリオ", Meiryo, Osaka, Verdana, arial, Helvetica, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif; *font-size: small; *font: x-small; }
+select, input, button, textarea { font:99% Verdana, arial, helvetica, clean, sans-serif; *font-size: 100%; } table { border-collapse: collapse; border-spacing :0; font-size: inherit; font: 100% } pre, code, kbd, samp, tt { font-family: monospace; *font-size: 108%; line-height: 100% } #yui3-css-stamp.cssfonts { display:none }
+address, caption, cite, code, dfn, em, strong, th, var { font-style: normal; font-weight: normal; }
+pre, code, kbd, samp, tt { font-family: monospace; *font-size: 108%; line-height: 100%; }
+dl, p, ul, ol {
+	word-wrap: break-word;
+	word-break: break-all;
+}
+ul, ol {
+	list-style: none;
+}
+input, select, textarea {
+	border: 1px solid #ddd;
+	-ms-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	box-sizing: border-box;
+}
+input[type="radio"],
+input[type="checkbox"],
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+	margin: 0;
+}
+input[type="number"] {
+	-moz-appearance:textfield;
+}
+input[type="text"],
+input[type="radio"],
+input[type="button"],
+input[type="submit"],
+input[type="password"],
+input[type="checkbox"] {
+	border-radius: 0;
+	-ms-appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	-ms-appearance: button;
+	-moz-appearance: button;
+	-webkit-appearance: button;
+}
+input[type="file"] {
+	border: none;
+}
+select {
+	border-radius: 0;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-ms-appearance: none;
+	appearance: none;
+	background: url('/img/arrow_select_down.png') no-repeat center right;
+	background-size: 12px 9px;
+}
+select:-moz-focusring {
+	color:transparent;
+	text-shadow:0 0 0 #000;
+}
+input:focus,
+select:focus,
+textarea:focus {
+	-webkit-transition: all .5s;
+	-moz-transition: all .5s;
+	-ms-transition: all .5s;
+	-o-transition: all .5s;
+	transition: all .5s;
+	outline: none;
+	border-color: #f13757;
+}
+button{
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	outline: none;
+	padding: 0;
+	appearance: none;
+}
